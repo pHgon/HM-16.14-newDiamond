@@ -1,15 +1,15 @@
 objects/NALwrite.r.o: \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.cpp \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/NAL.h \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.h \
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.cpp :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/NAL.h :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.h :
- /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.cpp \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/NAL.h \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.h \
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.cpp :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/NAL.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/NALwrite.h :
+ /home/paulohenrik/GIT-repository/HM-16.14-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
