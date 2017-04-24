@@ -1,0 +1,23 @@
+objects/TAppDecCfg.d.o: \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/App/TAppDecoder/TAppDecCfg.cpp \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/App/TAppDecoder/TAppDecCfg.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/CommonDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TypeDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TAppCommon/program_options_lite.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComChromaFormat.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/CommonDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComRectangle.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/ContextTables.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComRom.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/Debug.h
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/App/TAppDecoder/TAppDecCfg.cpp :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/App/TAppDecoder/TAppDecCfg.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TypeDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TAppCommon/program_options_lite.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComChromaFormat.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComRectangle.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/ContextTables.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/TComRom.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/app/TAppDecoderAnalyser/../../../../source/Lib/TLibCommon/Debug.h :

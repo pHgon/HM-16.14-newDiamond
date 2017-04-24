@@ -1,0 +1,15 @@
+objects/SyntaxElementWriter.r.o: \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/SyntaxElementWriter.cpp \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/SyntaxElementWriter.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h \
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComRom.h
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/SyntaxElementWriter.cpp :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TypeDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibEncoder/SyntaxElementWriter.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComBitStream.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/CommonDef.h :
+ /home/paulohenrik/GIT-repository/HM-16-newDiamond/build/linux/lib/TLibEncoder/../../../../source/Lib/TLibCommon/TComRom.h :
