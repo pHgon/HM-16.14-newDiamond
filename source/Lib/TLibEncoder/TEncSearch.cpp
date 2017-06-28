@@ -4030,18 +4030,19 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
   {
     if ( bFirstSearchDiamond == 1 )
     {
-      xTZDiamondSearch ( pcPatternKey, cStruct, pcMvSrchRngLT, pcMvSrchRngRB, iStartX, iStartY, iDist, bFirstCornersForDiamondDist1 );
+      xTZ8PointDiamondSearch ( pcPatternKey, cStruct, pcMvSrchRngLT, pcMvSrchRngRB, iStartX, iStartY, iDist, bFirstCornersForDiamondDist1 );
     }
     else
     {
       xTZ8PointSquareSearch  ( pcPatternKey, cStruct, pcMvSrchRngLT, pcMvSrchRngRB, iStartX, iStartY, iDist );
     }
-
     if ( bFirstSearchStop && ( cStruct.uiBestRound >= uiFirstSearchRounds ) ) // stop criterion
     {
       break;
     }
   }
+  
+  int centerX = iStartX; int centerY = iStartY; // USADO PARA CALCULAR O CENTRO DO RASTER
 
   if (!bNewZeroNeighbourhoodTest)
   {
@@ -4122,16 +4123,32 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
   }
   else
   {
+      
+// ------------------------------------------------------------------------------------------------------------------------------------
+// ----- RASTER -----------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------
+      
     if ( bEnableRasterSearch && ( ((Int)(cStruct.uiBestDistance) > iRaster) || bAlwaysRasterSearch ) )
     {
-      cStruct.uiBestDistance = iRaster;
-      for ( iStartY = iSrchRngVerTop; iStartY <= iSrchRngVerBottom; iStartY += iRaster )
-      {
-        for ( iStartX = iSrchRngHorLeft; iStartX <= iSrchRngHorRight; iStartX += iRaster )
+        cStruct.uiBestDistance = iRaster;
+//      for ( iStartY = iSrchRngVerTop; iStartY <= iSrchRngVerBottom; iStartY += iRaster )
+//      {
+//        for ( iStartX = iSrchRngHorLeft; iStartX <= iSrchRngHorRight; iStartX += iRaster )
+//        {
+//          xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+//        }
+//      }
+      
+        int newSearchRange = 8;
+        for ( iStartY = centerY - newSearchRange; iStartY <= centerY + newSearchRange; iStartY += iRaster )
         {
-          xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
-        }
-      }
+            for ( iStartX = centerX - newSearchRange; iStartX <= centerX + newSearchRange; iStartX += iRaster )
+            {
+            	//printf("(%d,%d)\n", iStartX, iStartY);
+                xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+            }
+        }  
+        printf("(%d,%d,%d)\n", iSrchRngHorLeft, iSrchRngHorRight, centerX);
     }
   }
 
