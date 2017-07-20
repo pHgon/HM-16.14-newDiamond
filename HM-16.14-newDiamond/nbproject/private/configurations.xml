@@ -177,7 +177,6 @@
         <in>WeightPredAnalysis.cpp</in>
         <in>WeightPredAnalysis.h</in>
         <in>xPaulo.cpp</in>
-        <in>xPaulo.h</in>
       </df>
       <df name="TLibVideoIO">
         <in>TVideoIOYuv.cpp</in>
