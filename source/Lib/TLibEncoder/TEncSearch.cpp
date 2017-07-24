@@ -4130,31 +4130,38 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
       
     if ( bEnableRasterSearch && ( ((Int)(cStruct.uiBestDistance) > iRaster) || bAlwaysRasterSearch ) )
     {
-        cStruct.uiBestDistance = iRaster;
+      /*cStruct.uiBestDistance = iRaster;
       for ( iStartY = iSrchRngVerTop; iStartY <= iSrchRngVerBottom; iStartY += iRaster )
       {
         for ( iStartX = iSrchRngHorLeft; iStartX <= iSrchRngHorRight; iStartX += iRaster )
         {
           xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
         }
-      }
+      }*/
      
-        /*int meio = 102;
+        int meio = 51;
         int area = meio/2;
-        bool flag;
+        //bool flag;
         for(int distance=1; distance<meio; distance++){
-            flag = true;
+            iStartX = centerX;
+            iStartY = centerY;
+            //flag = true;
+            
             if(distance <= area){
-                centerX = meio;
-                centerY = meio-distance;
+                iStartY -= distance*iRaster;
                 do{
-                    if(centerX>iS)
+                    if(iStartY<iSrchRngVerTop)
+                        break;
                     // COMPARA
-                    centerX++;
-                    centerY++;
-                } while (centerX != meio && j!=meio);
+                    printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
+                    iStartX+=iRaster;
+                    iStartY+=iRaster;
+                } while (iStartY <= centerY);
+                
+                if(distance == 3)
+                    exit(0);
             }
-        }*/
+        }
         
     }
   }
