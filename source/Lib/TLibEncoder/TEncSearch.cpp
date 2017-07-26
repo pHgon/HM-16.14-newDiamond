@@ -4130,39 +4130,150 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
       
     if ( bEnableRasterSearch && ( ((Int)(cStruct.uiBestDistance) > iRaster) || bAlwaysRasterSearch ) )
     {
-      /*cStruct.uiBestDistance = iRaster;
+      /*  printf("%d %d %d %d (%d,%d)", iSrchRngVerTop, iSrchRngVerBottom, iSrchRngHorLeft, iSrchRngHorRight, centerX, centerY);
+      cStruct.uiBestDistance = iRaster;
       for ( iStartY = iSrchRngVerTop; iStartY <= iSrchRngVerBottom; iStartY += iRaster )
       {
         for ( iStartX = iSrchRngHorLeft; iStartX <= iSrchRngHorRight; iStartX += iRaster )
         {
+            printf("%d,%d\n", iStartX, iStartY);
           xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
         }
+        exit(0);
       }*/
      
-        int meio = 51;
-        int area = meio/2;
-        //bool flag;
-        for(int distance=1; distance<meio; distance++){
-            iStartX = centerX;
-            iStartY = centerY;
-            //flag = true;
+        int meio = 256;
+        int area = meio/2; //128
+        bool flag;
+        for(int distance=iRaster; distance<meio; distance+=iRaster){
+            flag = true;
             
             if(distance <= area){
-                iStartY -= distance*iRaster;
+                iStartX = centerX;
+                iStartY = centerY - distance;
                 do{
                     if(iStartY<iSrchRngVerTop)
                         break;
-                    // COMPARA
-                    printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+                    //printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
                     iStartX+=iRaster;
                     iStartY+=iRaster;
-                } while (iStartY <= centerY);
+                } while (iStartY < centerY && iStartX <= iSrchRngHorRight);
+
                 
-                if(distance == 3)
-                    exit(0);
+                iStartX = centerX + distance;
+                iStartY = centerY;
+                do{
+                    if(iStartX>iSrchRngHorRight)
+                        break;
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+                    //printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
+                    iStartX-=iRaster;
+                    iStartY+=iRaster;
+                } while (iStartX > centerX && iStartY <= iSrchRngVerBottom);
+                
+                
+                iStartX = centerX;
+                iStartY = centerY + distance;
+                do{
+                    if(iStartY>iSrchRngVerBottom)
+                        break;
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+                    //printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
+                    iStartX-=iRaster;
+                    iStartY-=iRaster;
+                } while (iStartY > centerY && iStartX >= iSrchRngHorLeft);
+                
+                
+                iStartX = centerX - distance;
+                iStartY = centerY;
+                do{
+                    if(iStartX<iSrchRngHorLeft)
+                        break;
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster );
+                    //printf("%d,%d   (%d,%d)\n", iStartX, iStartY, centerX, centerY);
+                    iStartX+=iRaster;
+                    iStartY-=iRaster;
+                } while (iStartX < centerX && iStartY >= iSrchRngVerTop);
+                
+                
+//                if(distance == 2)
+//                    exit(0);
+            }
+            else{
+                if(distance+1 == meio)
+                    flag = false;
+                
+                iStartX = centerX;
+                iStartY = centerY - distance;
+                if(iStartY >= iSrchRngVerTop){
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX        , iStartY, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX-iRaster, iStartY, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX+iRaster, iStartY, 0, iRaster);
+                }
+                
+                iStartX = centerX + distance;
+                iStartY = centerY;
+                if(iStartX <= iSrchRngHorRight){
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY        , 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY-iRaster, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY+iRaster, 0, iRaster);
+                }
+                
+                iStartX = centerX;
+                iStartY = centerY + distance;
+                if(iStartY <= iSrchRngVerBottom){
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX        , iStartY, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX-iRaster, iStartY, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX+iRaster, iStartY, 0, iRaster);
+                }
+                    
+                iStartX = centerX - distance;
+                iStartY = centerY;
+                if(iStartX >= iSrchRngHorLeft){
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY        , 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY-iRaster, 0, iRaster);
+                    xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY+iRaster, 0, iRaster);
+                }
+            }
+            
+            if(!flag){
+                for(int k=5; k<40; k+=5){
+                    iStartX = centerX + k;
+                    iStartY = centerY - (area - (area%iRaster));
+                    while(iStartY < centerY){
+                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        iStartX+=iRaster;
+                        iStartY+=iRaster;
+                    }
+                    
+                    iStartX = centerX + (area - (area%iRaster));
+                    iStartY = centerY + k;
+                    while(iStartX > centerX){
+                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        iStartX-=iRaster;
+                        iStartY+=iRaster;
+                    }
+                    
+                    iStartX = centerX - k;
+                    iStartY = centerY + (area - (area%iRaster));
+                    while(iStartY > centerY){
+                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        iStartX-=iRaster;
+                        iStartY-=iRaster;
+                    }
+                    
+                    iStartX = centerX - (area - (area%iRaster));
+                    iStartY = centerY - k;
+                    while(iStartX < centerX){
+                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        iStartX+=iRaster;
+                        iStartY-=iRaster;
+                    }
+                }
             }
         }
-        
+        //exit(0);
     }
   }
 
