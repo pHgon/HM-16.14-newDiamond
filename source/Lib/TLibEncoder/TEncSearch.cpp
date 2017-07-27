@@ -4203,7 +4203,7 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
             else{
                 if(distance+1 == meio)
                     flag = false;
-                
+               
                 iStartX = centerX;
                 iStartY = centerY - distance;
                 if(iStartY >= iSrchRngVerTop){
@@ -4242,7 +4242,8 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
                     iStartX = centerX + k;
                     iStartY = centerY - (area - (area%iRaster));
                     while(iStartY < centerY){
-                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        if(iStartY >= iSrchRngVerTop && iStartX <= iSrchRngHorRight)
+                            xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
                         iStartX+=iRaster;
                         iStartY+=iRaster;
                     }
@@ -4250,7 +4251,8 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
                     iStartX = centerX + (area - (area%iRaster));
                     iStartY = centerY + k;
                     while(iStartX > centerX){
-                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        if(iStartX <= iSrchRngHorRight && iStartY <= iSrchRngVerBottom)
+                            xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
                         iStartX-=iRaster;
                         iStartY+=iRaster;
                     }
@@ -4258,7 +4260,8 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
                     iStartX = centerX - k;
                     iStartY = centerY + (area - (area%iRaster));
                     while(iStartY > centerY){
-                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        if(iStartY <= iSrchRngVerBottom && iStartX >= iSrchRngHorLeft)
+                            xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
                         iStartX-=iRaster;
                         iStartY-=iRaster;
                     }
@@ -4266,7 +4269,8 @@ Void TEncSearch::xTZSearch( const TComDataCU* const pcCU,
                     iStartX = centerX - (area - (area%iRaster));
                     iStartY = centerY - k;
                     while(iStartX < centerX){
-                        xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
+                        if(iStartX >= iSrchRngHorLeft && iStartY >= iSrchRngVerTop)
+                            xTZSearchHelp( pcPatternKey, cStruct, iStartX, iStartY, 0, iRaster);
                         iStartX+=iRaster;
                         iStartY-=iRaster;
                     }
