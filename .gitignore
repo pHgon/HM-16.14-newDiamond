@@ -28,6 +28,6 @@
 *.out
 *.app
 
-/bin
-/myCFGs
+bin/
+myCFGs/
 
